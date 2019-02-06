@@ -19,6 +19,12 @@ git-tree-sha1 = "f60954495a7afcee4136f78d1d60350abd37a409"
 uuid = "49dc2e85-a5d0-5ad3-a950-438e2897f1b9"
 version = "0.4.1"
 
+[[Cbc]]
+deps = ["BinaryProvider", "Compat", "Libdl", "MathOptInterface", "MathProgBase"]
+git-tree-sha1 = "6f96429f743e5f30f8fef4cc99e8eef35c9111b3"
+uuid = "9961bab8-2fa3-5c5a-9d89-47fab24efd76"
+version = "0.5.2"
+
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random", "Test"]
 git-tree-sha1 = "f73b0e10f2a5756de7019818a41654686da06b09"
@@ -39,9 +45,15 @@ version = "0.2.0"
 
 [[Compat]]
 deps = ["Base64", "Dates", "DelimitedFiles", "Distributed", "InteractiveUtils", "LibGit2", "Libdl", "LinearAlgebra", "Markdown", "Mmap", "Pkg", "Printf", "REPL", "Random", "Serialization", "SharedArrays", "Sockets", "SparseArrays", "Statistics", "Test", "UUIDs", "Unicode"]
-git-tree-sha1 = "ec61a16eed883ad0cfa002d7489b3ce6d039bb9a"
+git-tree-sha1 = "49269e311ffe11ac5b334681d212329002a9832a"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "1.4.0"
+version = "1.5.1"
+
+[[Conda]]
+deps = ["Compat", "JSON", "VersionParsing"]
+git-tree-sha1 = "b625d802587c2150c279a40a646fba63f9bd8187"
+uuid = "8f4d0f93-b110-5947-807f-2305c1781a2d"
+version = "1.2.0"
 
 [[Contour]]
 deps = ["LinearAlgebra", "StaticArrays", "Test"]
@@ -79,6 +91,9 @@ version = "0.0.8"
 deps = ["LinearAlgebra", "Random", "Serialization", "Sockets"]
 uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
+[[FileWatching]]
+uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
+
 [[FixedPointNumbers]]
 deps = ["Test"]
 git-tree-sha1 = "b8045033701c3b10bf2324d7203404be7aef88ba"
@@ -103,6 +118,12 @@ git-tree-sha1 = "3c62c19ddf86ff016829fdac1663cd3c75558c34"
 uuid = "28b8d3ca-fb5f-59d9-8090-bfdbd6d07a71"
 version = "0.37.0"
 
+[[IJulia]]
+deps = ["Base64", "Conda", "Dates", "InteractiveUtils", "JSON", "Markdown", "MbedTLS", "Pkg", "Printf", "REPL", "Random", "SoftGlobalScope", "Test", "UUIDs", "ZMQ"]
+git-tree-sha1 = "d2e3182d2ad6644bd05fbd75468d4114b39ac923"
+uuid = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+version = "1.16.0"
+
 [[InteractiveUtils]]
 deps = ["LinearAlgebra", "Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
@@ -114,10 +135,12 @@ uuid = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 version = "0.20.0"
 
 [[JuMP]]
-deps = ["Calculus", "Compat", "ForwardDiff", "Libdl", "MathProgBase", "Pkg", "ReverseDiffSparse", "Serialization"]
-git-tree-sha1 = "3bd8e52f7aeb2736a8e1b0d8ae8d01c2c85fea24"
+deps = ["Calculus", "DataStructures", "ForwardDiff", "LinearAlgebra", "MathOptInterface", "NaNMath", "Random", "SparseArrays", "Statistics", "Test"]
+git-tree-sha1 = "db897ea06270247f45992c4e543a7d8a4948f5f9"
+repo-rev = "master"
+repo-url = "https://github.com/JuliaOpt/JuMP.jl.git"
 uuid = "4076af6c-e467-56ae-b986-b466b2749572"
-version = "0.18.5"
+version = "0.18.5+"
 
 [[LibGit2]]
 uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"
@@ -153,6 +176,12 @@ deps = ["Compat"]
 git-tree-sha1 = "3bf2e534e635df810e5f4b4f1a8b6de9004a0d53"
 uuid = "fdba3010-5040-5b88-9595-932c9decdf73"
 version = "0.7.7"
+
+[[MbedTLS]]
+deps = ["BinaryProvider", "Dates", "Libdl", "Random", "Sockets", "Test"]
+git-tree-sha1 = "40b4a9149f0967714991328b8155c9ff5f91e755"
+uuid = "739be429-bea8-5141-9913-cc70e7f3736d"
+version = "0.6.7"
 
 [[Measures]]
 deps = ["Test"]
@@ -233,12 +262,6 @@ git-tree-sha1 = "f6fbf4ba64d295e146e49e021207993b6b48c7d1"
 uuid = "ae029012-a4dd-5104-9daa-d747884805df"
 version = "0.5.2"
 
-[[ReverseDiffSparse]]
-deps = ["Calculus", "Compat", "DataStructures", "ForwardDiff", "MathProgBase", "NaNMath"]
-git-tree-sha1 = "706bae484c5a6ddf1c2fd888061751210d490c70"
-uuid = "89212889-6d3f-5f97-b412-7825138f6c9c"
-version = "0.8.5"
-
 [[SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
 
@@ -257,6 +280,12 @@ version = "0.2.1"
 
 [[Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
+
+[[SoftGlobalScope]]
+deps = ["Test"]
+git-tree-sha1 = "99e323ab05adfc057b0e8058c6bd90d19052c0a6"
+uuid = "b85f4697-e234-5449-a836-ec8e2f98b302"
+version = "1.0.9"
 
 [[SortingAlgorithms]]
 deps = ["DataStructures", "Random", "Test"]
@@ -306,3 +335,15 @@ uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
 [[Unicode]]
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
+
+[[VersionParsing]]
+deps = ["Compat"]
+git-tree-sha1 = "c9d5aa108588b978bd859554660c8a5c4f2f7669"
+uuid = "81def892-9a0e-5fdd-b105-ffc91e053289"
+version = "1.1.3"
+
+[[ZMQ]]
+deps = ["BinaryProvider", "FileWatching", "Libdl", "Sockets", "Test"]
+git-tree-sha1 = "34e7ac2d1d59d19d0e86bde99f1f02262bfa1613"
+uuid = "c2297ded-f4af-51ae-bb23-16f91089e4e1"
+version = "1.0.0"
