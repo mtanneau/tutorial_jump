@@ -9,6 +9,7 @@ Pkg.instantiate()
 # Standard packages
 using Random
 using Printf
+using Test
 
 
 using JuMP
