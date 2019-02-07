@@ -3,7 +3,7 @@
 
 Compute sub-tours from tentative tour `X`.
 """
-function find_subtour(n, X)
+function find_subtours(n, X)
     (n, n) == size(X) || throw(DimensionMismatch(
         "n=$n but X has size $(size(X))."
     ))
