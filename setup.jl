@@ -18,7 +18,4 @@ const MOI = JuMP.MathOptInterface
 using GLPK
 using Cbc
 
-using ExcelReaders
-using JLD
-
 @info "All packages successfully imported."
